@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>20/10 · Gửi người anh thương nhất 💖</title>
+  <meta name="description" content="Món quà nhỏ nhân ngày Phụ nữ Việt Nam 20/10">
+  <meta name="theme-color" content="#3a0a1e">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600&family=Dancing+Script:wght@500;700&family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="locked">
+
+  <canvas id="petals" aria-hidden="true"></canvas>
+  <canvas id="confetti" aria-hidden="true"></canvas>
+
+  <!-- Màn hình mở thư -->
+  <div id="gate" class="gate">
+    <div class="gate-glow"></div>
+    <div class="envelope" id="envelope">
+      <div class="env-back"></div>
+      <div class="env-letter"><span>💌</span></div>
+      <div class="env-front"></div>
+      <div class="env-flap"></div>
+      <div class="env-seal">♥</div>
+    </div>
+    <p class="gate-kicker">Gửi người con gái anh thương</p>
+    <h1 class="gate-title">Có một món quà<br>dành riêng cho <em>em</em></h1>
+    <button class="btn-gold" id="openBtn"><span>Mở ra nhé</span> <i>♥</i></button>
+  </div>
+
+  <!-- Thanh điều hướng -->
+  <nav class="nav" id="nav">
+    <a href="#hero">Mở đầu</a>
+    <a href="#letter">Tâm thư</a>
+    <a href="#gallery">Kỷ niệm</a>
+    <a href="#then">Ngày xưa</a>
+    <a href="#reasons">Vì sao</a>
+    <a href="#gift">Quà</a>
+  </nav>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-text reveal">
+        <p class="eyebrow"><span></span> Ngày Phụ nữ Việt Nam <span></span></p>
+        <div class="big-date" aria-label="20 tháng 10">20<small>/</small>10</div>
+        <h2 class="script hero-script">Chúc mừng em yêu</h2>
+        <p class="hero-sub">Người phụ nữ rạng rỡ nhất trong cuộc đời anh.<br>Hôm nay là ngày của em — và anh muốn cả thế giới biết em quý giá nhường nào.</p>
+        <div class="countdown" id="countdown" aria-live="polite"></div>
+        <a href="#letter" class="btn-gold ghost"><span>Đọc tâm thư</span> <i>↓</i></a>
+      </div>
+
+      <div class="hero-collage reveal">
+        <div class="frame f-main tilt"><img src="assets/img/booth21.jpg" alt="Hai đứa mình"></div>
+        <div class="frame f-a"><img src="assets/img/img0923.jpg" alt="Em và anh" ></div>
+        <div class="frame f-b"><img src="assets/img/booth23.jpg" alt="Nụ cười của em"></div>
+        <div class="orbit-heart h1">♥</div>
+        <div class="orbit-heart h2">♥</div>
+        <div class="orbit-heart h3">♥</div>
+      </div>
+
+      <div class="scroll-hint"><span></span></div>
+    </section>
+
+    <div class="divider"><i></i><b>❀</b><i></i></div>
+
+    <!-- TÂM THƯ -->
+    <section class="section" id="letter">
+      <header class="sec-head reveal">
+        <p class="eyebrow"><span></span> Tâm thư <span></span></p>
+        <h2 class="sec-title">Những điều anh muốn nói với em</h2>
+      </header>
+
+      <div class="letter-wrap reveal">
+        <article class="letter">
+          <div class="stamp">20·10</div>
+          <p class="greet script">Gửi em — cô gái của anh,</p>
+          <div class="letter-body" id="letterBody">
+            <p>Hôm nay là 20/10, ngày cả nước tôn vinh những người phụ nữ. Nhưng với anh, <b>ngày nào có em cũng là một ngày đáng được tôn vinh</b>.</p>
+            <p>Anh vẫn nhớ những buổi tối mình ngồi cạnh nhau, chẳng cần nói gì nhiều, chỉ cần nắm tay thôi là cả thế giới bỗng chậm lại. Em có biết không, những khoảnh khắc nhỏ bé ấy chính là điều anh trân quý nhất.</p>
+            <p>Cảm ơn em vì đã kiên nhẫn với những lúc anh vụng về, vì những nụ cười làm anh quên hết mệt mỏi, vì đã luôn ở đó — dịu dàng nhưng mạnh mẽ, giản dị nhưng lấp lánh hơn bất cứ điều gì anh từng thấy.</p>
+            <p>Anh không hứa sẽ là người hoàn hảo, nhưng anh hứa sẽ <b>luôn chọn em</b>, mỗi ngày, trong mọi hoàn cảnh. Sẽ lắng nghe em nhiều hơn, ôm em chặt hơn và thương em nhiều hơn của ngày hôm qua.</p>
+            <p>Mong em luôn xinh đẹp, bình yên và được yêu thương đúng theo cách em xứng đáng. Và nếu được, hãy để anh là người ở bên em trong tất cả những ngày 20/10 sau này nữa nhé.</p>
+          </div>
+          <p class="sign script">Yêu em rất nhiều,<br><span>— Anh của em ♥</span></p>
+        </article>
+        <div class="letter-deco d1">✿</div>
+        <div class="letter-deco d2">❀</div>
+      </div>
+    </section>
+
+    <!-- BỘ SƯU TẬP -->
+    <section class="section" id="gallery">
+      <header class="sec-head reveal">
+        <p class="eyebrow"><span></span> Khung ảnh kỷ niệm <span></span></p>
+        <h2 class="sec-title">Của riêng hai đứa mình</h2>
+        <p class="sec-sub">Chạm vào ảnh để xem lớn — và tải về giữ làm kỷ niệm nhé.</p>
+      </header>
+      <div class="gallery" id="galleryGrid"></div>
+    </section>
+
+    <!-- HAI BÀN TAY -->
+    <section class="section hands" id="hands">
+      <div class="hands-inner">
+        <div class="hands-photos reveal">
+          <div class="heart-photo hp1"><img src="assets/img/img0619.jpg" alt="Trái tim từ đôi tay"></div>
+          <div class="heart-photo hp2"><img src="assets/img/img0630.jpg" alt="Nắm tay"></div>
+          <div class="heart-photo hp3"><img src="assets/img/img0616.jpg" alt="Trái tim đêm"></div>
+        </div>
+        <div class="hands-text reveal">
+          <p class="eyebrow left"><span></span> Hai bàn tay</p>
+          <h2 class="sec-title left">Chỉ cần nắm tay,<br>là đủ rồi.</h2>
+          <p>Có những lời yêu không cần nói thành tiếng. Đôi bàn tay đan vào nhau giữa đêm, chiếc vòng nhỏ lấp lánh trên cổ tay em, và trái tim ghép từ hai bàn tay — đó là cách mình yêu nhau, lặng lẽ mà bền bỉ.</p>
+          <p class="script quote">“Thế giới có thể ồn ào, miễn là tay em vẫn ở trong tay anh.”</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- NGÀY XƯA -->
+    <section class="section" id="then">
+      <header class="sec-head reveal">
+        <p class="eyebrow"><span></span> Em của ngày xưa <span></span></p>
+        <h2 class="sec-title">Cô học trò với chiếc balo hồng</h2>
+        <p class="sec-sub">Anh đã không có mặt trong những ngày ấy, nhưng anh biết ơn từng năm tháng đã dệt nên em của hôm nay.</p>
+      </header>
+      <div class="polaroid-row" id="polaroids"></div>
+    </section>
+
+    <!-- LÝ DO -->
+    <section class="section" id="reasons">
+      <header class="sec-head reveal">
+        <p class="eyebrow"><span></span> Vì sao anh thương em <span></span></p>
+        <h2 class="sec-title">Sáu điều nhỏ — rất nhiều yêu thương</h2>
+        <p class="sec-sub">Chạm vào từng thẻ để lật ra nhé.</p>
+      </header>
+      <div class="cards" id="cards"></div>
+    </section>
+
+    <!-- QUAY QUÀ -->
+    <section class="section gift" id="gift">
+      <header class="sec-head reveal">
+        <p class="eyebrow"><span></span> Vòng quay may mắn <span></span></p>
+        <h2 class="sec-title">Quay một món quà cho em</h2>
+        <p class="sec-sub">Bốn món quà, một lần xoay — vận may đang chờ em đó.</p>
+      </header>
+
+      <div class="wheel-area reveal">
+        <div class="wheel-box">
+          <div class="pointer"></div>
+          <canvas id="wheel" width="640" height="640" aria-label="Vòng quay quà tặng"></canvas>
+          <button class="wheel-btn" id="spinBtn" aria-label="Quay">QUAY</button>
+        </div>
+        <div class="gift-side">
+          <ul class="gift-list" id="giftList"></ul>
+          <div class="history">
+            <h3 class="script">Quà em đã nhận</h3>
+            <ol id="history"><li class="empty">Chưa có món nào — quay thử nào!</li></ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KẾT -->
+    <section class="finale" id="finale">
+      <div class="big-heart reveal" id="bigHeart" role="button" tabindex="0" aria-label="Thả tim">♥</div>
+      <h2 class="script finale-title reveal">Anh yêu em</h2>
+      <p class="finale-sub reveal">Chúc em một ngày 20/10 thật rạng rỡ,<br>hạnh phúc và luôn được yêu thương.</p>
+      <div class="love-days reveal" id="loveDays" hidden></div>
+      <p class="tap-hint reveal">(chạm vào trái tim để thả thêm yêu thương)</p>
+      <footer>Làm bằng cả trái tim · 20/10/<span id="year"></span></footer>
+    </section>
+  </main>
+
+  <!-- Quà trúng -->
+  <div class="modal" id="prizeModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-ribbon">Chúc mừng em!</div>
+      <div class="prize-emoji" id="prizeEmoji">🎁</div>
+      <h3 id="prizeTitle">Quà</h3>
+      <p id="prizeDesc"></p>
+      <div class="modal-actions">
+        <button class="btn-gold" id="prizeAgain"><span>Quay tiếp</span></button>
+        <button class="btn-gold ghost" id="prizeClose"><span>Đóng</span></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lb-close" id="lbClose" aria-label="Đóng">✕</button>
+    <button class="lb-nav prev" id="lbPrev" aria-label="Ảnh trước">‹</button>
+    <figure class="lb-fig">
+      <div class="frame lb-frame"><img id="lbImg" alt=""></div>
+      <figcaption id="lbCap"></figcaption>
+      <a class="btn-gold" id="lbDl" download><span>⬇ Tải ảnh về</span></a>
+    </figure>
+    <button class="lb-nav next" id="lbNext" aria-label="Ảnh sau">›</button>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
