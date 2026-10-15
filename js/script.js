@@ -10,10 +10,10 @@ const CONFIG = {
 };
 
 const GIFTS = [
-  { emoji: "🍽️", title: "Bữa tối em chọn", short: "Bữa tối em chọn", desc: "Em muốn ăn gì, ở đâu — anh đều đưa em đi và trả hết. Em chỉ việc gọi món thật thoải mái!", color: ["#e8456f", "#a3224d"] },
-  { emoji: "🤗", title: "Cái ôm 10 phút", short: "Ôm 10 phút", desc: "Một cái ôm thật chặt kèm vài cái xoa đầu. Không được rút ra trước khi em cho phép nha.", color: ["#f2b94b", "#b8862b"] },
-  { emoji: "🌹", title: "Bó hoa bất ngờ", short: "Hoa bất ngờ", desc: "Một bó hoa em thích nhất cùng một món quà nhỏ xinh — anh sẽ chuẩn bị thật kỹ để em bất ngờ.", color: ["#c2305e", "#6e1236"] },
-  { emoji: "👑", title: "Một ngày làm nữ hoàng", short: "Ngày nữ hoàng", desc: "Cả ngày hôm đó anh nghe lời em tuyệt đối: em chỉ đâu anh đi đó, em muốn gì anh chiều nấy!", color: ["#ff8fb0", "#d9406d"] },
+  { emoji: "🍽️", title: "Nụ hôn", short: "", desc: "", color: ["#e8456f", "#a3224d"] },
+  { emoji: "🤗", title: "Nụ hôn", short: "Ôm 10 phút", desc: "Một cái ôm thật chặt kèm vài cái xoa đầu. Không được rút ra trước khi em cho phép nha.", color: ["#f2b94b", "#b8862b"] },
+  { emoji: "🌹", title: "Nụ hôn", short: "Cái hôn 10 phút", desc: "Một bó hoa em thích nhất cùng một món quà nhỏ xinh — anh sẽ chuẩn bị thật kỹ để em bất ngờ.", color: ["#c2305e", "#6e1236"] },
+  { emoji: "👑", title: "Nụ hôn", short: "", desc: "", color: ["#ff8fb0", "#d9406d"] },
 ];
 
 const GALLERY = [
@@ -114,7 +114,7 @@ function drawPetal(p) {
 }
 
 const parts = []; // confetti & sparkles
-function burst(x, y, n = 60, opts = {}) {
+function burst(x, y, n = 30, opts = {}) {
   const set = opts.set || ["💖", "💗", "🌸", "✨", "💕", "🌹", "❤️", "⭐"];
   for (let i = 0; i < n; i++) {
     const a = rand(0, 6.28), v = rand(3, opts.speed || 11);
@@ -125,7 +125,7 @@ function burst(x, y, n = 60, opts = {}) {
     });
   }
 }
-function rain(n = 80) {
+function rain(n = 40) {
   for (let i = 0; i < n; i++) {
     parts.push({
       x: rand(0, W), y: rand(-H * .5, -20), vx: rand(-1, 1), vy: rand(2, 6), g: .02,
@@ -181,11 +181,11 @@ function openGate() {
   if (opened) return;
   opened = true;
   envelope.classList.add("open");
-  setTimeout(() => burst(W / 2, H / 2, 70), 450);
+  setTimeout(() => burst(W / 2, H / 2, 30), 450);
   setTimeout(() => {
     gate.classList.add("gone");
     document.body.classList.remove("locked");
-    rain(60);
+    rain(30);
     scrollTo(0, 0);
   }, 1300);
 }
@@ -329,12 +329,12 @@ function drawWheel() {
     wctx.translate(c, c); wctx.rotate(a0 + SEG / 2);
     wctx.textAlign = "center"; wctx.textBaseline = "middle";
     wctx.font = "64px serif";
-    wctx.fillText(g.emoji, r * .66, 0);
+    wctx.fillText("🎁", r * .66, 0);
     wctx.fillStyle = "#fff";
     wctx.shadowColor = "rgba(0,0,0,.55)"; wctx.shadowBlur = 6;
     wctx.font = "700 27px 'Be Vietnam Pro',sans-serif";
     wctx.textAlign = "right";
-    wctx.fillText(g.short, r * .88 - 90, 0, r * .45);
+    // wctx.fillText(`Quà số ${i + 1}`, r * .88 - 90, 0, r * .45);
     wctx.restore();
   });
   // viền bóng đèn
@@ -354,14 +354,16 @@ function drawWheel() {
 drawWheel();
 document.fonts && document.fonts.ready.then(drawWheel);
 
-$("#giftList").innerHTML = GIFTS.map((g, i) => `<li data-i="${i}"><span class="e">${g.emoji}</span><span>${g.title}</span></li>`).join("");
-const received = [];
+const STORE = "womanday-gift-result";
+const saved = (() => { try { return localStorage.getItem(STORE); } catch (e) { return null; } })();
+let done = false;
+const side = $(".gift-side");
+side.hidden = true;
 
 function spin() {
-  if (spinning) return;
+  if (spinning || done) return;
   spinning = true;
   $("#spinBtn").disabled = true;
-  $$("#giftList li").forEach((l) => l.classList.remove("hit"));
 
   const target = Math.floor(Math.random() * N);
   const u = rand(.12, .88);
@@ -377,28 +379,36 @@ function spin() {
     drawWheel();
     if (t < 1) return requestAnimationFrame(frame);
     spinning = false;
-    $("#spinBtn").disabled = false;
+    try { localStorage.setItem(STORE, `${target}:${u}`); } catch (e) {}
     showPrize(target);
   })(t0);
 }
 
-function showPrize(i) {
+function showPrize(i, silent) {
+  done = true;
+  const b = $("#spinBtn");
+  b.disabled = true;
+  b.textContent = "ĐÃ QUAY";
   const g = GIFTS[i];
-  $(`#giftList li[data-i="${i}"]`).classList.add("hit");
   $("#prizeEmoji").textContent = g.emoji;
   $("#prizeTitle").textContent = g.title;
   $("#prizeDesc").textContent = g.desc;
+  $("#history").innerHTML = `<li>${g.emoji} ${g.title}</li>`;
+  side.hidden = false;
+  if (silent) return;
   const m = $("#prizeModal");
   m.classList.add("show"); m.setAttribute("aria-hidden", "false");
-  burst(W / 2, H / 2, 90);
+  burst(W / 2, H / 2, 45);
   setTimeout(() => rain(40), 300);
+}
 
-  const h = $("#history");
-  if (!received.length) h.innerHTML = "";
-  received.push(g.title);
-  const li = document.createElement("li");
-  li.textContent = `${g.emoji} ${g.title}`;
-  h.appendChild(li);
+if (saved) {
+  const [i, u] = saved.split(":").map(Number);
+  if (GIFTS[i]) {
+    rot = -(i + (u || .5)) * SEG;
+    drawWheel();
+    showPrize(i, true);
+  }
 }
 function closePrize() {
   const m = $("#prizeModal");
@@ -406,7 +416,6 @@ function closePrize() {
 }
 $("#spinBtn").addEventListener("click", spin);
 $("#prizeClose").addEventListener("click", closePrize);
-$("#prizeAgain").addEventListener("click", () => { closePrize(); setTimeout(spin, 350); });
 $("#prizeModal").addEventListener("click", (e) => { if (e.target.id === "prizeModal") closePrize(); });
 
 /* ============================================================
@@ -415,7 +424,7 @@ $("#prizeModal").addEventListener("click", (e) => { if (e.target.id === "prizeMo
 const bh = $("#bigHeart");
 const bigBurst = (e) => {
   const r = bh.getBoundingClientRect();
-  burst(r.left + r.width / 2, r.top + r.height / 2, 40);
+  burst(r.left + r.width / 2, r.top + r.height / 2, 20);
   if (e && e.type === "click") bh.animate([{ transform: "scale(1)" }, { transform: "scale(1.25)" }, { transform: "scale(1)" }], { duration: 400 });
 };
 bh.addEventListener("click", bigBurst);
@@ -432,5 +441,5 @@ if (CONFIG.loveStart) {
 
 // Tự thả tim khi chạm "Quà" lần đầu hiển thị cho vui mắt
 new IntersectionObserver((en, ob) => {
-  if (en[0].isIntersecting) { burst(W / 2, H * .6, 30); ob.disconnect(); }
+  if (en[0].isIntersecting) { burst(W / 2, H * .6, 15); ob.disconnect(); }
 }, { threshold: .6 }).observe($("#finale"));

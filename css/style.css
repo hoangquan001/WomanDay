@@ -261,7 +261,7 @@ body:not(.locked) .nav{transform:translate(-50%,0)}
 .history li.empty{list-style:none;margin-left:-1.4rem;opacity:.6;font-style:italic}
 
 /* ---------- Kết ---------- */
-.finale{text-align:center;padding:6rem 1.2rem 3rem;position:relative}
+.finale{text-align:center;padding:2rem 1.2rem 3rem;position:relative}
 .big-heart{font-size:clamp(7rem,22vw,13rem);line-height:1;color:var(--rose);cursor:pointer;display:inline-block;
   text-shadow:0 0 40px rgba(232,69,111,.8),0 0 100px rgba(232,69,111,.5);user-select:none;-webkit-user-select:none}
 .big-heart.in{animation:heartbeat 1.8s ease-in-out infinite}
