@@ -10,10 +10,10 @@ const CONFIG = {
 };
 
 const GIFTS = [
-  { emoji: "🍽️", title: "Nụ hôn", short: "", desc: "", color: ["#e8456f", "#a3224d"] },
-  { emoji: "🤗", title: "Nụ hôn", short: "Ôm 10 phút", desc: "Một cái ôm thật chặt kèm vài cái xoa đầu. Không được rút ra trước khi em cho phép nha.", color: ["#f2b94b", "#b8862b"] },
-  { emoji: "🌹", title: "Nụ hôn", short: "Cái hôn 10 phút", desc: "Một bó hoa em thích nhất cùng một món quà nhỏ xinh — anh sẽ chuẩn bị thật kỹ để em bất ngờ.", color: ["#c2305e", "#6e1236"] },
-  { emoji: "👑", title: "Nụ hôn", short: "", desc: "", color: ["#ff8fb0", "#d9406d"] },
+  { emoji: "🤗", title: "Một vé bên em suốt đời >_< hihi", short: "Bên em trọn đời", desc: "Anh sẽ luôn ở bên em, chăm sóc và yêu thương em mỗi ngày. Anh yêu em.", color: ["#c2305e", "#6e1236"] },
+  { emoji: "🤗", title: "Một vé bên em suốt đời >_< hihi", short: "Bên em trọn đời", desc: "Anh sẽ luôn ở bên em, chăm sóc và yêu thương em mỗi ngày. Anh yêu em.", color: ["#c2305e", "#6e1236"] },
+  { emoji: "🤗", title: "Một vé bên em suốt đời >_< hihi", short: "Bên em trọn đời", desc: "Anh sẽ luôn ở bên em, chăm sóc và yêu thương em mỗi ngày. Anh yêu em.", color: ["#c2305e", "#6e1236"] },
+  { emoji: "🤗", title: "Một vé bên em suốt đời >_< hihi", short: "Bên em trọn đời", desc: "Anh sẽ luôn ở bên em, chăm sóc và yêu thương em mỗi ngày. Anh yêu em.", color: ["#c2305e", "#6e1236"] },
 ];
 
 const GALLERY = [
@@ -39,6 +39,42 @@ const GALLERY = [
   ["img0918", "Một ngày bình yên", "gold"],
   ["img0927", "Em xinh nhất", "rose"],
   ["img0935", "Cô gái của anh", "gold"],
+  ["new_0", "Cặp đôi hoàn hảo", "silver"],
+  ["new_1", "Nửa kia của anh", "rose"],
+  ["new_2", "Định mệnh của nhau", "gold"],
+  ["new_3", "Anh và em", "rose"],
+  ["new_4", "Chung đôi trọn đời", "silver"],
+  ["new_5", "Tình yêu vĩnh cửu", "gold"],
+  ["new_6", "My Love", "silver"],
+  ["new_7", "Bên nhau mãi nhé", "rose"],
+  ["new_8", "Soulmate", "gold"],
+  ["new_9", "Em là ngoại lệ", "gold"],
+  ["new_10", "Yêu em nhất", "rose"],
+  ["new_11", "Our Story", "silver"],
+  ["new_12", "Một đời có nhau", "gold"],
+  ["new_13", "Anh là của em", "rose"],
+  ["new_14", "You & Me", "silver"],
+  ["new_15", "Tình yêu duy nhất", "gold"],
+  ["new_16", "Cục cưng của anh", "rose"],
+  ["new_17", "Forever Us", "gold"],
+  ["new_18", "Nắm tay anh nhé", "silver"],
+  ["new_19", "Em là nhà", "rose"],
+  ["new_20", "Perfect Match", "gold"],
+  ["new_21", "Đôi ta một cặp", "silver"],
+  ["new_22", "Bé yêu của anh", "rose"],
+  ["new_23", "Hẹn ước trăm năm", "gold"],
+  ["new_24", "Just Two of Us", "silver"],
+  ["new_25", "Trái tim có đôi", "gold"],
+  ["new_26", "Anh thương em", "rose"],
+  ["new_27", "Together Forever", "silver"],
+  ["new_28", "Người thương duy nhất", "gold"],
+  ["new_29", "Mãi là của nhau", "rose"],
+  ["new_30", "Lovebirds", "gold"],
+  ["new_31", "Có em có anh", "silver"],
+  ["new_32", "Công chúa của anh", "rose"],
+  ["new_33", "Đôi mình mãi đỉnh", "gold"],
+  ["new_34", "My Forever Person", "silver"],
+  ["new_35", "Yêu nhau dài lâu", "rose"]
 ];
 
 const SCHOOL = [
